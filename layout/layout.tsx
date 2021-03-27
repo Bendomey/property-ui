@@ -6,9 +6,11 @@ export interface Props {}
 const Layout: React.FC<Props> = ({ children }) => {
   return (
     <Fragment>
-      {children}
-      <Footer />
-      <CookieAlert />
+      <div className={"relative"}>
+        {children}
+        <Footer />
+        <CookieAlert />
+      </div>
     </Fragment>
   );
 };
