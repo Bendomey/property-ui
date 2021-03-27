@@ -9,7 +9,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       <div className={"relative"}>
         {children}
         <Footer />
-        <CookieAlert />
+        {/* <CookieAlert /> */}
       </div>
     </Fragment>
   );
