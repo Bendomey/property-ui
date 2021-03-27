@@ -33,8 +33,8 @@ const PropertyCard = () => {
               </div>
             </div>
             <a href="#" className="block mt-2">
-              <p className="text-xl font-semibold text-gray-900">
-                Boost your conversion rate
+              <p className="text-xl font-semibold truncate text-gray-900">
+                New Square Apartment
               </p>
               <p className="mt-2 text-base text-gray-500">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.

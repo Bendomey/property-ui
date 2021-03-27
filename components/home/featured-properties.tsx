@@ -29,7 +29,7 @@ const FeaturedProperties: React.FC<Props> = ({}) => {
           "mt-0 sm:mt-0 md:mt-10 mx-0 sm:mx-0 md:mx-7 grid gap-x-8 gap-y-8 lg:grid-cols-3 lg:max-w-none"
         }
       >
-        {[1, 2, 3, 3, 4, 2].map((_, i: number) => (
+        {[1, 2, 3].map((_, i: number) => (
           <Fragment key={i}>
             <PropertyCard />
           </Fragment>
