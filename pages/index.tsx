@@ -1,4 +1,6 @@
 import { Fragment } from "react";
+import Banner from "../components/banner";
+import Header from "../components/header";
 import { Seo } from "../components/Seo";
 import { Layout } from "../layout/layout";
 
@@ -10,7 +12,12 @@ export default function Home() {
         description="Application for property listings. Help sellers upload their product and then get a buyer."
       />
 
-      <Layout>Index</Layout>
+      <Layout>
+        <div className={"relative"}>
+          <Header />
+          <Banner />
+        </div>
+      </Layout>
     </Fragment>
   );
 }
