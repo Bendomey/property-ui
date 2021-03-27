@@ -18,7 +18,7 @@ const Banner: React.FC<Props> = ({}) => {
             </h1>
             <div className={"flex justify-center"}>
               <span className={"text-center text-white text-lg mt-2"}>
-                Search properties that are for sale and for rent
+                Search properties that are for sale and rent
               </span>
             </div>
             <div className={"flex justify-center mt-10"}>
