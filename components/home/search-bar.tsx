@@ -1,7 +1,7 @@
 import { Fragment, useState, Dispatch, SetStateAction, useRef } from "react";
 import cn from "classnames";
 import { Transition } from "@headlessui/react";
-import { useOutsideAlerter } from "./hooks";
+import { useOutsideAlerter } from "../hooks";
 
 export interface Props {}
 interface PropertyTypeProps {
@@ -144,7 +144,7 @@ const Dropdown: React.FC<DropdownProps> = ({ type, setType }) => {
               {(ref: any) => (
                 <ul
                   ref={ref}
-                  className="origin-top-right absolute -left-3 mt-6 w-72 rounded-md shadow-lg overflow-hidden bg-white divide-y divide-gray-200 ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  className="origin-top-right absolute z-10 -left-3 mt-6 w-72 rounded-md shadow-lg overflow-hidden bg-white divide-y divide-gray-200 ring-1 ring-black ring-opacity-5 focus:outline-none"
                   tabIndex={-1}
                   role="listbox"
                   aria-labelledby="listbox-label"

@@ -14,6 +14,7 @@
     "@tailwindcss/forms": "^0.3.2",
     "classnames": "^2.2.6",
     "date-fns": "^2.19.0",
+    "framer-motion": "^4.0.3",
     "next": "latest",
     "nprogress": "^0.2.0",
     "react": "^17.0.1",
