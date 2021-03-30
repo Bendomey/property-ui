@@ -1,9 +1,12 @@
 import { FC, Fragment } from "react";
 import Link from "next/link";
+import cn from "classnames";
 
-export interface Props {}
+export interface Props {
+  background: "light" | "dark";
+}
 
-const Header: FC<Props> = ({}) => {
+const Header: FC<Props> = ({ background }) => {
   return (
     <Fragment>
       <div className="absolute w-full">
@@ -44,30 +47,55 @@ const Header: FC<Props> = ({}) => {
           </div>
           <nav className="hidden md:flex space-x-10">
             <Link href="/">
-              <a className="text-base font-medium text-gray-200 hover:text-gray-100 hover:underline">
+              <a
+                className={cn("text-base font-medium hover:underline", {
+                  "text-gray-200 hover:text-gray-100": background === "dark",
+                  "text-gray-700 hover:text-gray-700": background === "light",
+                })}
+              >
                 Home
               </a>
             </Link>
 
             <Link href="/contact-us">
-              <a className="text-base  text-gray-200 hover:text-gray-100 hover:underline">
+              <a
+                className={cn("text-base font-medium hover:underline", {
+                  "text-gray-200 hover:text-gray-100": background === "dark",
+                  "text-gray-700 hover:text-gray-700": background === "light",
+                })}
+              >
                 Properties
               </a>
             </Link>
             <Link href="/contact-us">
-              <a className="text-base  text-gray-200 hover:text-gray-100 hover:underline">
+              <a
+                className={cn("text-base font-medium hover:underline", {
+                  "text-gray-200 hover:text-gray-100": background === "dark",
+                  "text-gray-700 hover:text-gray-700": background === "light",
+                })}
+              >
                 Contact
               </a>
             </Link>
             <Link href="/contact-us">
-              <a className="text-base text-gray-200 hover:text-gray-100 hover:underline">
+              <a
+                className={cn("text-base font-medium hover:underline", {
+                  "text-gray-200 hover:text-gray-100": background === "dark",
+                  "text-gray-700 hover:text-gray-700": background === "light",
+                })}
+              >
                 About
               </a>
             </Link>
           </nav>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
             <Link href="/sign-in">
-              <a className="text-base  text-gray-200 hover:text-gray-100 hover:underline">
+              <a
+                className={cn("text-base font-medium hover:underline", {
+                  "text-gray-200 hover:text-gray-100": background === "dark",
+                  "text-gray-700 hover:text-gray-600": background === "light",
+                })}
+              >
                 Sign In
               </a>
             </Link>

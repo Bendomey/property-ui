@@ -16,7 +16,7 @@ export default function Home() {
 
       <Layout>
         <div className={"relative"}>
-          <Header />
+          <Header background={"dark"} />
           <Banner />
         </div>
 
