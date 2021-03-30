@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       extend: {
         fontFamily: {
-          sans: ["Lexend", ...defaultTheme.fontFamily.sans],
+          sans: ["Rubik", ...defaultTheme.fontFamily.sans],
         },
         colors: {},
       },

@@ -53,18 +53,18 @@ const Header: FC<Props> = ({ background }) => {
                   "text-gray-700 hover:text-gray-700": background === "light",
                 })}
               >
-                Home
+                HOME
               </a>
             </Link>
 
-            <Link href="/contact-us">
+            <Link href="/properties">
               <a
                 className={cn("text-base font-medium hover:underline", {
                   "text-gray-200 hover:text-gray-100": background === "dark",
                   "text-gray-700 hover:text-gray-700": background === "light",
                 })}
               >
-                Properties
+                PROPERTIES
               </a>
             </Link>
             <Link href="/contact-us">
@@ -74,17 +74,17 @@ const Header: FC<Props> = ({ background }) => {
                   "text-gray-700 hover:text-gray-700": background === "light",
                 })}
               >
-                Contact
+                CONTACT
               </a>
             </Link>
-            <Link href="/contact-us">
+            <Link href="/about-us">
               <a
                 className={cn("text-base font-medium hover:underline", {
                   "text-gray-200 hover:text-gray-100": background === "dark",
                   "text-gray-700 hover:text-gray-700": background === "light",
                 })}
               >
-                About
+                ABOUT
               </a>
             </Link>
           </nav>
@@ -96,12 +96,12 @@ const Header: FC<Props> = ({ background }) => {
                   "text-gray-700 hover:text-gray-600": background === "light",
                 })}
               >
-                Sign In
+                SIGN IN
               </a>
             </Link>
             <Link href="/sign-up">
               <a className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base  text-white bg-red-700 hover:bg-red-900">
-                Sign up
+                Sign Up
               </a>
             </Link>
           </div>
