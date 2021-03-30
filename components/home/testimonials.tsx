@@ -93,7 +93,7 @@ const Testimonials: React.FC<Props> = ({}) => {
               <div>
                 <button
                   className={
-                    "rounded-full focus:ring-0 focus:border-red-400 bg-gray-200 p-3 ml-5 hover:shadow-md"
+                    "rounded-full focus:ring-0 transition duration-300 transform hover:-translate-y-1 hover:scale-110 focus:border-red-400 bg-gray-200 p-3 ml-5 hover:shadow-md"
                   }
                 >
                   <svg
@@ -113,7 +113,7 @@ const Testimonials: React.FC<Props> = ({}) => {
               <div>
                 <button
                   className={
-                    "rounded-full focus:ring-0 focus:border-red-400 bg-gray-200 p-3 ml-5 hover:shadow-md"
+                    "rounded-full focus:ring-0 focus:border-red-400 transition duration-300 transform hover:-translate-y-1 hover:scale-110 bg-gray-200 p-3 ml-5 hover:shadow-md"
                   }
                 >
                   <svg
