@@ -12,11 +12,9 @@ const FeaturedProperties: React.FC<Props> = ({}) => {
         <Tabs
           tabs={{
             all: "All",
-            house: "House",
-            apartment: "Apartment",
             land: "Land",
-            exterior: "Exterior",
-            building: "Building",
+            commercial: "Commercial Buildings",
+            residential: "Residential Buildings",
           }}
           selected={theme}
           onChange={setTheme}
