@@ -6,7 +6,7 @@ export interface Props {}
 const Banner: React.FC<Props> = ({}) => {
   return (
     <Fragment>
-      <div className={"bannerContainer bg-red-800"}>
+      <div className={"homeBannerContainer bg-red-800"}>
         <div
           className={
             "h-full w-full flex justify-center items-center bg-black bg-opacity-50"
@@ -29,7 +29,7 @@ const Banner: React.FC<Props> = ({}) => {
       </div>
 
       <style jsx>{`
-        .bannerContainer {
+        .homeBannerContainer {
           height: 70vh;
           background-image: url("/images/background.jpg");
           background-repeat: no-repeat;
