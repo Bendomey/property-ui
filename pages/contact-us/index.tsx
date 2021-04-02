@@ -13,7 +13,7 @@ const ContactUs = () => {
       />
 
       <Layout>
-        <div className={"relative"}>
+        <div className={"relative shadow"}>
           <Header background={"light"} />
           <Banner />
         </div>
