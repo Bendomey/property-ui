@@ -7,15 +7,15 @@ const Sidebar: FC<Props> = ({}) => {
     <Fragment>
       <div className={"w-full h-full  bg-white shadow-sm p-5"}>
         <div>
-          <h1 className={"text-lg text-gray-800"}>Search</h1>
+          <h1 className={"text-lg text-gray-800"}>Search By Location</h1>
 
           <div className="mt-3 relative rounded-md shadow-sm">
             <input
               type="text"
               name="account_number"
               id="account_number"
-              className="focus:ring-red-500 bg-red-50 focus:border-red-500 block w-full pr-10 sm:text-sm py-3 border-red-200 rounded-sm"
-              placeholder="Search by keyword"
+              className="focus:ring-gray-500 bg-gray-50 focus:border-gray-500 block w-full pr-10 sm:text-sm py-3 border-gray-200 rounded-sm"
+              placeholder="Location here..."
             />
             <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
               <svg
@@ -37,7 +37,7 @@ const Sidebar: FC<Props> = ({}) => {
         </div>
 
         <div className={"mt-10"}>
-          <h1 className={"text-lg text-gray-800"}>Property Types</h1>
+          <h1 className={"text-lg text-gray-800"}>Service Types</h1>
 
           <div className={"mt-3"}>
             <div className="flex items-center">
@@ -46,7 +46,7 @@ const Sidebar: FC<Props> = ({}) => {
                 className="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded-sm"
               />
               <label className="ml-2 block text-gray-600 font-light">
-                Land
+                For Rent
               </label>
             </div>
             <div className="flex mt-2 items-center">
@@ -55,17 +55,42 @@ const Sidebar: FC<Props> = ({}) => {
                 className="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded-sm"
               />
               <label className="ml-2 block text-gray-600 font-light">
-                Commercial Buildings
+                For Rent
               </label>
             </div>
-            <div className="flex mt-2 items-center">
-              <input
-                type="checkbox"
-                className="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded-sm"
-              />
-              <label className="ml-2 block text-gray-600 font-light">
-                Residential Buildings
-              </label>
+          </div>
+
+          <div className={"mt-10"}>
+            <h1 className={"text-lg text-gray-800"}>Property Categories</h1>
+
+            <div className={"mt-3"}>
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  className="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded-sm"
+                />
+                <label className="ml-2 block text-gray-600 font-light">
+                  Land
+                </label>
+              </div>
+              <div className="flex mt-2 items-center">
+                <input
+                  type="checkbox"
+                  className="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded-sm"
+                />
+                <label className="ml-2 block text-gray-600 font-light">
+                  Commercial Buildings
+                </label>
+              </div>
+              <div className="flex mt-2 items-center">
+                <input
+                  type="checkbox"
+                  className="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded-sm"
+                />
+                <label className="ml-2 block text-gray-600 font-light">
+                  Residential Buildings
+                </label>
+              </div>
             </div>
           </div>
 
