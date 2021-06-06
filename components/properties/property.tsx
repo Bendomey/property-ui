@@ -6,14 +6,18 @@ const PropertyCard: FC<Props> = (props) => {
   return (
     <Fragment>
       <div className={"p-4 w-full grid grid-cols-7 gap-x-9 bg-white"}>
-        <div className={"col-span-3"}>
+        <div className={"col-span-7 sm:col-span-7 md:col-span-3"}>
           <img
             className=" h-44 rounded-sm w-full object-cover"
             src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixqx=ah3lxr8uqw&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
             alt=""
           />
         </div>
-        <div className={"col-span-4"}>
+        <div
+          className={
+            "col-span-7 sm:col-span-7 md:col-span-4 mt-3 sm:mt-3 md:mt-0"
+          }
+        >
           <div className={"flex flex-row justify-between items-center"}>
             <div>
               <p className="text-sm text-gray-400">

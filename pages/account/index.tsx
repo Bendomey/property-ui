@@ -60,7 +60,7 @@ const Account = () => {
           <Banner />
         </div>
 
-        <div className={"bg-gray-50 p-5 sm:p-5 md:p-10"}>
+        <div className={"bg-gray-50 p-5 sm:p-5 md:px-28"}>
           <div className="lg:grid lg:grid-cols-12 lg:gap-x-5 relative">
             <Sidebar activeTab={activeTab} />
             <div className="space-y-6 sm:px-6 lg:px-0 lg:col-span-9">

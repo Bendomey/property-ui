@@ -20,16 +20,16 @@ const Properties = () => {
           <Header background={"light"} />
           <Banner />
         </div>
-        <div className={"bg-gray-50 w-full py-10 px-28 "}>
+        <div className={"bg-gray-50 w-full py-10 px-2 sm:px-2 md:px-28"}>
           <div className={"w-full grid grid-cols-6 gap-x-5 "}>
-            <div className={"col-span-2 "}>
+            <div className={"col-span-6 sm:col-span-6 md:col-span-2 "}>
               <div className={"sticky top-5"}>
                 <Sidebar />
               </div>
             </div>
-            <div className={"col-span-4"}>
-              <div className={"grid grid-cols-5 gap-x-4"}>
-                <div className={"col-span-3"}>
+            <div className={"col-span-6 sm:col-span-6 md:col-span-4"}>
+              <div className={"grid grid-cols-5 gap-x-4 mt-5 sm:mt-5 md:mt-0"}>
+                <div className={"col-span-5 sm:col-span-5 md:col-span-3"}>
                   <div
                     className={
                       "w-full p-4 bg-white shadow-sm text-gray-500 font-light"
@@ -39,7 +39,11 @@ const Properties = () => {
                     <span className={"text-red-600"}>30</span> results
                   </div>
                 </div>
-                <div className={"col-span-2"}>
+                <div
+                  className={
+                    "col-span-5 sm:col-span-5 md:col-span-2 mt-2 sm:mt-2 md:mt-0"
+                  }
+                >
                   <div>
                     <select
                       name="location"

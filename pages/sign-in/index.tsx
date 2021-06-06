@@ -18,18 +18,32 @@ const SignIn = () => {
           <Header background={"light"} />
           <Banner />
         </div>
-        <div className={"bg-gray-50 w-full py-10 px-28"}>
+        <div className={"bg-gray-50 w-full py-10 px-5 sm:px-5 md:px-28"}>
           <div className={"grid grid-cols-3 gap-8"}>
-            <div className={"col-span-2 bg-white p-10"}>
+            <div
+              className={
+                "col-span-3 sm:col-span-3 md:col-span-2 bg-white p-5 sm:p-5 md:p-10"
+              }
+            >
               <form
                 className={
                   "w-full h-full flex flex-col justify-center items-center"
                 }
               >
-                <span className={"text-3xl font-medium"}>
+                <span
+                  className={"text-2xl sm:text-2xl md:text-3xl font-medium"}
+                >
                   Login into your account!
                 </span>
-                <div className={"mt-16 w-2/3"}>
+                <span
+                  className={
+                    "text-sm block sm:block md:hidden text-center mt-2"
+                  }
+                >
+                  Please login with your email and password to access your
+                  account.
+                </span>
+                <div className={"mt-10 w-full sm:w-full md:w-2/3"}>
                   <div>
                     <label
                       htmlFor="email"
@@ -63,10 +77,10 @@ const SignIn = () => {
                     </div>
                   </div>
                 </div>
-                <div className={"mt-10 w-2/3"}>
+                <div className={"mt-10 w-full sm:w-full md:w-2/3"}>
                   <button
                     type="submit"
-                    className="group relative w-full flex justify-center py-2 px-5 border border-transparent text-lg font-medium rounded text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                    className="group relative w-full flex justify-center py-3 px-5 border border-transparent text-lg font-medium rounded text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                   >
                     <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                       <svg
@@ -88,7 +102,11 @@ const SignIn = () => {
                 </div>
               </form>
             </div>
-            <div className={"col-span-1 bg-white px-10 pt-16 pb-10"}>
+            <div
+              className={
+                "col-span-1 hidden sm:hidden md:block bg-white px-10 pt-16 pb-10"
+              }
+            >
               <div className={" w-full  flex items-center flex-col"}>
                 <LoginSvg className={" h-52 w-52 "} />
                 <div className={"mt-10 flex flex-col items-center"}>

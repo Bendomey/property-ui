@@ -5,10 +5,10 @@ import { Tabs } from "../tabs";
 export interface Props {}
 
 const FeaturedProperties: React.FC<Props> = ({}) => {
-  const [theme, setTheme] = useState("all");
+  const [tab, setTab] = useState("all");
   return (
     <Fragment>
-      <div className={"w-full flex justify-center"}>
+      <div className={"hidden sm:hidden w-full md:flex justify-center"}>
         <Tabs
           tabs={{
             all: "All",
@@ -16,10 +16,24 @@ const FeaturedProperties: React.FC<Props> = ({}) => {
             commercial: "Commercial Buildings",
             residential: "Residential Buildings",
           }}
-          selected={theme}
-          onChange={setTheme}
+          selected={tab}
+          onChange={setTab}
           className="mx-auto xl:mx-0 px-4 sm:px-6 md:px-8 xl:px-0"
         />
+      </div>
+      <div className={"flex sm:flex w-full mb-5 md:hidden justify-center"}>
+        <select
+          value={tab}
+          required
+          onChange={(e) => setTab(e?.target?.value)}
+          className="focus:ring-red-500 focus:border-red-500 block w-full pl-5 py-4 text-lg bg-gray-50 border-gray-300 rounded"
+          placeholder="Password here eg. ********"
+        >
+          <option value="All">All</option>
+          <option value="land">Land</option>
+          <option value="commercial">Commercial Buildings</option>
+          <option value="residential">Residential Buildings</option>
+        </select>
       </div>
 
       <div

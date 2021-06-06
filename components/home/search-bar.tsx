@@ -31,27 +31,57 @@ const SearchBar = () => {
   );
   return (
     <Fragment>
-      <div
-        className={
-          "bg-white w-11/12 flex justify-between items-center rounded-md p-1"
-        }
-      >
-        <div className={"flex flex-row items-center w-full "}>
-          <div className={"border-r w-1/3 border-gray-200 px-2"}>
-            <Dropdown type={propertyType} setType={setPropertyType} />
-          </div>
-          <div className={"mx-2 w-full"}>
-            <input
-              type="text"
-              className="focus:ring-0 border-none focus:border-gray-50 block w-full sm:text-sm"
-              placeholder="Search for property...."
-            />
+      <div className={"flex w-full flex-col"}>
+        <div className={"flex justify-center"}>
+          <div
+            className={
+              "bg-white w-11/12 flex flex-col sm:flex-col md:flex-row justify-between items-center rounded-md px-1 py-3 sm:px-1 sm:py-3 md:p-1"
+            }
+          >
+            <div className={"flex flex-row items-center w-full "}>
+              <div
+                className={
+                  "border-r w-6/12 sm:w-6/12 md:w-1/3 border-gray-200 px-2"
+                }
+              >
+                <Dropdown type={propertyType} setType={setPropertyType} />
+              </div>
+              <div className={"mx-2 w-full"}>
+                <input
+                  type="text"
+                  className="focus:ring-0 border-none focus:border-gray-50 block w-full sm:text-sm"
+                  placeholder="Search for property...."
+                />
+              </div>
+            </div>
+            <div className={"hidden sm:hidden md:block"}>
+              <button
+                type="button"
+                className="inline-flex items-center px-7 py-4 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-red-500"
+              >
+                <svg
+                  className="-ml-0.5 mr-2 h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+                Search
+              </button>
+            </div>
           </div>
         </div>
-        <div>
+        <div className={"flex sm:flex justify-center mt-5 md:hidden"}>
           <button
             type="button"
-            className="inline-flex items-center px-7 py-4 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-red-500"
+            className="inline-flex  justify-center items-center w-11/12 px-7 py-4 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-red-500"
           >
             <svg
               className="-ml-0.5 mr-2 h-4 w-4"
