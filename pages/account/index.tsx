@@ -28,6 +28,26 @@ const MyAccount = dynamic(
   }
 );
 
+// security
+const Security = dynamic(
+  () => import("../../components/account/tabs/security"),
+  {
+    ssr: false,
+    loading: ({ isLoading, error, retry }) => {
+      if (isLoading) {
+        return <Loading />;
+      }
+      if (error) {
+        return (
+          <Fragment>
+            <Error retry={retry} />
+          </Fragment>
+        );
+      }
+    },
+  }
+);
+
 enum TabProps {
   MY_ACCOUNT = "my-account",
   SECURITY = "security",
@@ -68,9 +88,15 @@ const Account = () => {
                 <Fragment>
                   <MyAccount />
                 </Fragment>
+              ) : activeTab === TabProps.SECURITY ? (
+                <Fragment>
+                  <Security />
+                </Fragment>
               ) : (
                 <Fragment>
-                  <NotFound />
+                  <div className={"flex justify-center items-center"}>
+                    <NotFound />
+                  </div>
                 </Fragment>
               )}
             </div>
