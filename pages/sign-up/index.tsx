@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { Layout } from "../../layout/layout";
 import Header from "../../components/header";
 import { LoginSvg } from "../../components/svg";
+import Link from "next/link";
 
 //dynamically import verify modal form
 // const VerifyModal = dynamic(
@@ -39,7 +40,7 @@ const SignUp = () => {
     <Fragment>
       <Seo
         title="Login"
-        description="Application for property listings. Help sellers upload their product and then get a buyer."
+        description="Application for property listings. Help sellers upload their properties and then get a buyer."
       />
       <Layout>
         <div className={"relative"}>
@@ -154,6 +155,21 @@ const SignUp = () => {
                         placeholder="Confirm Password here eg. ********"
                       />
                     </div>
+                  </div>
+                </div>
+                <div
+                  className={
+                    "mt-6 flex items-center justify-between w-full sm:w-full md:w-full"
+                  }
+                >
+                  <div />
+
+                  <div className="text-sm leading-5">
+                    <Link href={"/sign-in"}>
+                      <a className="font-light text-lg text-red-600 hover:text-red-500 hover:underline focus:outline-none focus:underline transition ease-in-out duration-150">
+                        Already have an account?
+                      </a>
+                    </Link>
                   </div>
                 </div>
                 <div className={"mt-7 w-full "}>

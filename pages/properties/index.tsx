@@ -12,7 +12,7 @@ const Properties = () => {
     <Fragment>
       <Seo
         title="Properties"
-        description="Application for property listings. Help sellers upload their product and then get a buyer."
+        description="Application for property listings. Help sellers upload their properties and then get a buyer."
       />
 
       <Layout>

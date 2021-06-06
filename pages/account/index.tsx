@@ -51,7 +51,7 @@ const Account = () => {
     <Fragment>
       <Seo
         title="My Account"
-        description="Application for property listings. Help sellers upload their product and then get a buyer."
+        description="Application for property listings. Help sellers upload their properties and then get a buyer."
       />
 
       <Layout>

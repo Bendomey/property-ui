@@ -5,13 +5,14 @@ import Banner from "../../components/auth/banner";
 import { Layout } from "../../layout/layout";
 import Header from "../../components/header";
 import { LoginSvg } from "../../components/svg";
+import Link from "next/link";
 
 const SignIn = () => {
   return (
     <Fragment>
       <Seo
         title="Login"
-        description="Application for property listings. Help sellers upload their product and then get a buyer."
+        description="Application for property listings. Help sellers upload their properties and then get a buyer."
       />
       <Layout>
         <div className={"relative"}>
@@ -75,6 +76,33 @@ const SignIn = () => {
                         placeholder="Password here eg. ********"
                       />
                     </div>
+                  </div>
+                </div>
+                <div
+                  className={
+                    "mt-6 flex flex-col sm:flex-col md:flex-row items-center justify-between w-full sm:w-full md:w-2/3"
+                  }
+                >
+                  <div className="flex items-center">
+                    <input
+                      id="remember_me"
+                      type="checkbox"
+                      className="form-checkbox h-4 w-4 text-red-600 transition duration-150 ease-in-out"
+                    />
+                    <label
+                      htmlFor="remember_me"
+                      className="ml-2 block text-lg leading-5 text-gray-900"
+                    >
+                      Remember me
+                    </label>
+                  </div>
+
+                  <div className="text-sm leading-5">
+                    <Link href={"/forgot-password"}>
+                      <a className="font-light text-lg text-red-600 hover:text-red-500 hover:underline focus:outline-none focus:underline transition ease-in-out duration-150">
+                        Forgot your password?
+                      </a>
+                    </Link>
                   </div>
                 </div>
                 <div className={"mt-10 w-full sm:w-full md:w-2/3"}>
