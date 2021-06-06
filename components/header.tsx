@@ -67,16 +67,7 @@ const Header: FC<Props> = ({ background }) => {
                 PROPERTIES
               </a>
             </Link>
-            <Link href="/contact-us">
-              <a
-                className={cn("text-base font-medium hover:underline", {
-                  "text-gray-200 hover:text-gray-100": background === "dark",
-                  "text-gray-700 hover:text-gray-700": background === "light",
-                })}
-              >
-                CONTACT
-              </a>
-            </Link>
+
             <Link href="/about-us">
               <a
                 className={cn("text-base font-medium hover:underline", {
@@ -85,6 +76,16 @@ const Header: FC<Props> = ({ background }) => {
                 })}
               >
                 ABOUT
+              </a>
+            </Link>
+            <Link href="/contact-us">
+              <a
+                className={cn("text-base font-medium hover:underline", {
+                  "text-gray-200 hover:text-gray-100": background === "dark",
+                  "text-gray-700 hover:text-gray-700": background === "light",
+                })}
+              >
+                CONTACT
               </a>
             </Link>
           </nav>

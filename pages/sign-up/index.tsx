@@ -1,12 +1,40 @@
-import { Fragment } from "react";
+import { Fragment, useCallback, useState } from "react";
 import { Seo } from "../../components/Seo";
 import Banner from "../../components/auth/banner";
+import dynamic from "next/dynamic";
 
 import { Layout } from "../../layout/layout";
 import Header from "../../components/header";
 import { LoginSvg } from "../../components/svg";
 
-const SignIn = () => {
+//dynamically import verify modal form
+// const VerifyModal = dynamic(
+//   () => import("../../components/register/verifiyCode"),
+//   {
+//     ssr: false,
+//     loading: ({ isLoading, error, retry }) => {
+//       if (isLoading) {
+//         return <p>Loading...</p>;
+//       }
+//       if (error) {
+//         return (
+//           <button onClick={retry}>
+//             Oops, something happened, click to try reloading
+//           </button>
+//         );
+//       }
+//     },
+//   }
+// );
+
+const SignUp = () => {
+  const [email, setEmail] = useState("");
+  const [showVerifyModal, setShowVerifyModal] = useState(false);
+
+  const handleSubmit = useCallback((e) => {
+    e.preventDefault();
+    setShowVerifyModal(true);
+  }, []);
   return (
     <Fragment>
       <Seo
@@ -26,6 +54,7 @@ const SignIn = () => {
               }
             >
               <form
+                onSubmit={handleSubmit}
                 className={
                   "w-full h-full flex flex-col justify-center items-center"
                 }
@@ -71,6 +100,8 @@ const SignIn = () => {
                       <input
                         required
                         type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e?.target?.value)}
                         className="focus:ring-red-500 focus:border-red-500 block w-full pl-5 py-4 text-lg bg-gray-50 border-gray-300 rounded"
                         placeholder="Email here eg. you@example.com"
                       />
@@ -183,8 +214,13 @@ const SignIn = () => {
           </div>
         </div>
       </Layout>
+      {/* <VerifyModal
+        show={showVerifyModal}
+        setShow={setShowVerifyModal}
+        email={email}
+      /> */}
     </Fragment>
   );
 };
 
-export default SignIn;
+export default SignUp;
