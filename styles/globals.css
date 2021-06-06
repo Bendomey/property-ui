@@ -13,8 +13,8 @@ body {
 
 /* For the top bar loader */
 #nprogress .bar {
-  height: 5vh;
-  background: #800020 !important;
+  padding: 1px;
+  background: #f03557 !important;
   border: 1px solid #f03557;
 }
 
