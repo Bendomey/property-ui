@@ -13,7 +13,11 @@ const Banner: React.FC<Props> = ({}) => {
           }
         >
           <div>
-            <h1 className={"text-white font-bold text-5xl"}>
+            <h1
+              className={
+                "text-white text-center font-bold text-3xl sm:text-3xl md:text-5xl"
+              }
+            >
               Find Your <span className={"text-red-200"}>Perfect Property</span>
             </h1>
             <div className={"flex justify-center"}>

@@ -28,6 +28,26 @@ const MyAccount = dynamic(
   }
 );
 
+// security
+const Security = dynamic(
+  () => import("../../components/account/tabs/security"),
+  {
+    ssr: false,
+    loading: ({ isLoading, error, retry }) => {
+      if (isLoading) {
+        return <Loading />;
+      }
+      if (error) {
+        return (
+          <Fragment>
+            <Error retry={retry} />
+          </Fragment>
+        );
+      }
+    },
+  }
+);
+
 enum TabProps {
   MY_ACCOUNT = "my-account",
   SECURITY = "security",
@@ -51,7 +71,7 @@ const Account = () => {
     <Fragment>
       <Seo
         title="My Account"
-        description="Application for property listings. Help sellers upload their product and then get a buyer."
+        description="Application for property listings. Help sellers upload their properties and then get a buyer."
       />
 
       <Layout>
@@ -60,7 +80,7 @@ const Account = () => {
           <Banner />
         </div>
 
-        <div className={"bg-gray-50 p-5 sm:p-5 md:p-10"}>
+        <div className={"bg-gray-50 p-5 sm:p-5 md:px-28"}>
           <div className="lg:grid lg:grid-cols-12 lg:gap-x-5 relative">
             <Sidebar activeTab={activeTab} />
             <div className="space-y-6 sm:px-6 lg:px-0 lg:col-span-9">
@@ -68,9 +88,15 @@ const Account = () => {
                 <Fragment>
                   <MyAccount />
                 </Fragment>
+              ) : activeTab === TabProps.SECURITY ? (
+                <Fragment>
+                  <Security />
+                </Fragment>
               ) : (
                 <Fragment>
-                  <NotFound />
+                  <div className={"flex justify-center items-center"}>
+                    <NotFound />
+                  </div>
                 </Fragment>
               )}
             </div>

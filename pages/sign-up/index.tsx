@@ -1,17 +1,45 @@
-import { Fragment } from "react";
+import { Fragment, useCallback, useState } from "react";
 import { Seo } from "../../components/Seo";
 import Banner from "../../components/auth/banner";
+import dynamic from "next/dynamic";
 
 import { Layout } from "../../layout/layout";
 import Header from "../../components/header";
 import { LoginSvg } from "../../components/svg";
 import Link from "next/link";
 
-const SignIn = () => {
+//dynamically import verify modal form
+// const VerifyModal = dynamic(
+//   () => import("../../components/register/verifiyCode"),
+//   {
+//     ssr: false,
+//     loading: ({ isLoading, error, retry }) => {
+//       if (isLoading) {
+//         return <p>Loading...</p>;
+//       }
+//       if (error) {
+//         return (
+//           <button onClick={retry}>
+//             Oops, something happened, click to try reloading
+//           </button>
+//         );
+//       }
+//     },
+//   }
+// );
+
+const SignUp = () => {
+  const [email, setEmail] = useState("");
+  const [showVerifyModal, setShowVerifyModal] = useState(false);
+
+  const handleSubmit = useCallback((e) => {
+    e.preventDefault();
+    setShowVerifyModal(true);
+  }, []);
   return (
     <Fragment>
       <Seo
-        title="Login"
+        title="Sign Up"
         description="Application for property listings. Help sellers upload their properties and then get a buyer."
       />
       <Layout>
@@ -27,6 +55,7 @@ const SignIn = () => {
               }
             >
               <form
+                onSubmit={handleSubmit}
                 className={
                   "w-full h-full flex flex-col justify-center items-center"
                 }
@@ -34,18 +63,34 @@ const SignIn = () => {
                 <span
                   className={"text-2xl sm:text-2xl md:text-3xl font-medium"}
                 >
-                  Login into your account!
+                  Create your account!
                 </span>
                 <span
                   className={
                     "text-sm block sm:block md:hidden text-center mt-2"
                   }
                 >
-                  Please login with your email and password to access your
-                  account.
+                  Please fill in the form to be able to transact businesses on
+                  our platform.
                 </span>
-                <div className={"mt-10 w-full sm:w-full md:w-2/3"}>
-                  <div>
+                <div className={"mt-10 w-full grid grid-cols-2 gap-6"}>
+                  <div className={"col-span-2"}>
+                    <label
+                      htmlFor="email"
+                      className="block  font-medium text-gray-700"
+                    >
+                      Full Name <span className={"text-red-600"}>*</span>
+                    </label>
+                    <div className="mt-2 relative w-full rounded shadow-sm">
+                      <input
+                        required
+                        type="text"
+                        className="focus:ring-red-500 focus:border-red-500 block w-full pl-5 py-4 text-lg bg-gray-50 border-gray-300 rounded"
+                        placeholder="Full name here eg. John Doe"
+                      />
+                    </div>
+                  </div>
+                  <div className={"col-span-2 sm:col-span-2 md:col-span-1"}>
                     <label
                       htmlFor="email"
                       className="block  font-medium text-gray-700"
@@ -56,12 +101,30 @@ const SignIn = () => {
                       <input
                         required
                         type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e?.target?.value)}
                         className="focus:ring-red-500 focus:border-red-500 block w-full pl-5 py-4 text-lg bg-gray-50 border-gray-300 rounded"
                         placeholder="Email here eg. you@example.com"
                       />
                     </div>
                   </div>
-                  <div className={"mt-5"}>
+                  <div className={"col-span-2 sm:col-span-2 md:col-span-1"}>
+                    <label
+                      htmlFor="email"
+                      className="block  font-medium text-gray-700"
+                    >
+                      Phone Number <span className={"text-red-600"}>*</span>
+                    </label>
+                    <div className="mt-2 relative w-full rounded shadow-sm">
+                      <input
+                        required
+                        type="text"
+                        className="focus:ring-red-500 focus:border-red-500 block w-full pl-5 py-4 text-lg bg-gray-50 border-gray-300 rounded"
+                        placeholder="Phone Number here eg. 0540000000"
+                      />
+                    </div>
+                  </div>
+                  <div className={"col-span-2 sm:col-span-2 md:col-span-1"}>
                     <label
                       htmlFor="email"
                       className="block  font-medium text-gray-700"
@@ -77,35 +140,39 @@ const SignIn = () => {
                       />
                     </div>
                   </div>
+                  <div className={"col-span-2 sm:col-span-2 md:col-span-1"}>
+                    <label
+                      htmlFor="email"
+                      className="block  font-medium text-gray-700"
+                    >
+                      Confirm Password <span className={"text-red-600"}>*</span>
+                    </label>
+                    <div className="mt-2 relative w-full rounded shadow-sm">
+                      <input
+                        required
+                        type="password"
+                        className="focus:ring-red-500 focus:border-red-500 block w-full pl-5 py-4 text-lg bg-gray-50 border-gray-300 rounded"
+                        placeholder="Confirm Password here eg. ********"
+                      />
+                    </div>
+                  </div>
                 </div>
                 <div
                   className={
-                    "mt-6 flex flex-col sm:flex-col md:flex-row items-center justify-between w-full sm:w-full md:w-2/3"
+                    "mt-6 flex items-center justify-between w-full sm:w-full md:w-full"
                   }
                 >
-                  <div className="flex items-center">
-                    <input
-                      id="remember_me"
-                      type="checkbox"
-                      className="form-checkbox h-4 w-4 text-red-600 transition duration-150 ease-in-out"
-                    />
-                    <label
-                      htmlFor="remember_me"
-                      className="ml-2 block text-lg leading-5 text-gray-900"
-                    >
-                      Remember me
-                    </label>
-                  </div>
+                  <div />
 
                   <div className="text-sm leading-5">
-                    <Link href={"/forgot-password"}>
+                    <Link href={"/sign-in"}>
                       <a className="font-light text-lg text-red-600 hover:text-red-500 hover:underline focus:outline-none focus:underline transition ease-in-out duration-150">
-                        Forgot your password?
+                        Already have an account?
                       </a>
                     </Link>
                   </div>
                 </div>
-                <div className={"mt-10 w-full sm:w-full md:w-2/3"}>
+                <div className={"mt-7 w-full "}>
                   <button
                     type="submit"
                     className="group relative w-full flex justify-center py-3 px-5 border border-transparent text-lg font-medium rounded text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
@@ -125,7 +192,7 @@ const SignIn = () => {
                         />
                       </svg>
                     </span>
-                    Sign in
+                    Sign up
                   </button>
                 </div>
               </form>
@@ -138,10 +205,10 @@ const SignIn = () => {
               <div className={" w-full  flex items-center flex-col"}>
                 <LoginSvg className={" h-52 w-52 "} />
                 <div className={"mt-10 flex flex-col items-center"}>
-                  <span className={"text-3xl font-medium"}>Login</span>
+                  <span className={"text-3xl font-medium"}>Register</span>
                   <span className={"mt-3 text-gray-600 text-center"}>
-                    Please login with your email and password to access your
-                    account.
+                    Please fill in the form to be able to transact businesses on
+                    our platform.
                   </span>
                 </div>
                 <div className={"mt-20 flex flex-row items-center"}>
@@ -163,8 +230,13 @@ const SignIn = () => {
           </div>
         </div>
       </Layout>
+      {/* <VerifyModal
+        show={showVerifyModal}
+        setShow={setShowVerifyModal}
+        email={email}
+      /> */}
     </Fragment>
   );
 };
 
-export default SignIn;
+export default SignUp;
