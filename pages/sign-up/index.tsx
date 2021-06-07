@@ -8,25 +8,25 @@ import Header from "../../components/header";
 import { LoginSvg } from "../../components/svg";
 import Link from "next/link";
 
-//dynamically import verify modal form
-// const VerifyModal = dynamic(
-//   () => import("../../components/register/verifiyCode"),
-//   {
-//     ssr: false,
-//     loading: ({ isLoading, error, retry }) => {
-//       if (isLoading) {
-//         return <p>Loading...</p>;
-//       }
-//       if (error) {
-//         return (
-//           <button onClick={retry}>
-//             Oops, something happened, click to try reloading
-//           </button>
-//         );
-//       }
-//     },
-//   }
-// );
+// dynamically import verify modal form
+const VerifyModal = dynamic(
+  () => import("../../components/register/verifiyCode"),
+  {
+    ssr: false,
+    loading: ({ isLoading, error, retry }) => {
+      if (isLoading) {
+        return <p>Loading...</p>;
+      }
+      if (error) {
+        return (
+          <button onClick={retry}>
+            Oops, something happened, click to try reloading
+          </button>
+        );
+      }
+    },
+  }
+);
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -230,11 +230,12 @@ const SignUp = () => {
           </div>
         </div>
       </Layout>
-      {/* <VerifyModal
+
+      <VerifyModal
         show={showVerifyModal}
         setShow={setShowVerifyModal}
         email={email}
-      /> */}
+      />
     </Fragment>
   );
 };

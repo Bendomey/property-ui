@@ -118,10 +118,10 @@ const VerifyCode = ({ show, setShow, email }: VerifyInputProp) => {
               </div>
               <div
                 className={
-                  "grid grid-cols-2 h-16 gap-0 w-full border-t border-gray-200"
+                  "grid grid-cols-1 h-16 gap-0 w-full border-t border-gray-200"
                 }
               >
-                <button
+                {/* <button
                   onClick={() => setShow(false)}
                   disabled={true}
                   className={
@@ -129,7 +129,7 @@ const VerifyCode = ({ show, setShow, email }: VerifyInputProp) => {
                   }
                 >
                   <span className={"font-light text-gray-400"}>CANCEL</span>
-                </button>
+                </button> */}
                 <button
                   onClick={HandleSubmit}
                   className={
